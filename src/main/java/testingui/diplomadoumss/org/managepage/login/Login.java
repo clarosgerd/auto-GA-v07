@@ -13,13 +13,13 @@ public class Login  {
 
 
 
-    @FindBy(xpath ="/html/body/div[1]/form[1]/div[1]/input[1]")
+    @FindBy(xpath ="//*[@id=\"exampleInputEmail1\"]")
     private WebElement userNameField;
 
-    @FindBy(xpath ="/html/body/div[1]/form[1]/div[1]/input[2]")
+    @FindBy(xpath ="//*[@id=\"exampleInputPassword1\"]")
     private WebElement passwordField;
 
-    @FindBy(xpath ="/html/body/div[1]/form[1]/button")
+    @FindBy(xpath ="//*[@id=\"page-wrapper\"]/div/div/div/div/div[2]/form/button")
     private WebElement loginButton;
 
 //.form-signin input[type="password"]
