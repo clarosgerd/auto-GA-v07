@@ -1,37 +1,28 @@
 package testingui.diplomadoumss.org.managepage.login;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import testingui.diplomadoumss.org.managepage.BasePage;
 
 /**
  * @author Marcelo Garay
  * @project testingui.diplomadoumss.org
  */
-public class Login extends BasePage {
+public class Login  {
 
-    @FindBy(linkText="LoginForm")
-    @CacheLookup
-    private WebElement LoginFormpage;
 
-    @FindBy(css = "#btnLogin")
-    private WebElement loginclick;
 
-    @FindBy(css="input[id^='username']")
-    @CacheLookup
+    @FindBy(xpath ="/html/body/div[1]/form[1]/div[1]/input[1]")
     private WebElement userNameField;
 
-    @FindBy(css="input[id^='password']")
-    @CacheLookup
+    @FindBy(xpath ="/html/body/div[1]/form[1]/div[1]/input[2]")
     private WebElement passwordField;
 
-    @FindBy(css="button.btn.btn-success")
+    @FindBy(xpath ="/html/body/div[1]/form[1]/button")
     private WebElement loginButton;
 
-
+//.form-signin input[type="password"]
 //    @FindBy(xpath = "//input[@name='email' and @type='email']")
 //    private WebElement emailTextField;
 
@@ -41,16 +32,11 @@ public class Login extends BasePage {
 
 
     public void clickLoging()    {
-        loginclick.click();
-    }
-
-    public WebElement getLoginFormpage()    {
-        return LoginFormpage;
+        loginButton.click();
     }
 
     public void setUserPP(String user)
     {
-        userNameField.clear();
         userNameField.sendKeys(user);
     }
     public void setPasswordField(String pass)
@@ -59,13 +45,5 @@ public class Login extends BasePage {
         passwordField.sendKeys(pass);
         passwordField.sendKeys(Keys.TAB);
     }
-    public WebElement getUserNameField(){
-        return userNameField;
-    }
-    public WebElement getLoginButton()
-    {
-        return loginButton;
-    }
-
 
 }
