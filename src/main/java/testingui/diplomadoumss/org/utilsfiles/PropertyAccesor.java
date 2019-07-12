@@ -40,4 +40,6 @@ public class PropertyAccesor {
     public static void main(String[] args) {
         System.out.println(PropertyAccesor.getInstance().getURL());
     }
+
+
 }
