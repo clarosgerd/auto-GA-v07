@@ -30,7 +30,7 @@ public class PropertyAccesor {
     }
 
     public String getURL(){
-        return prop.getProperty("url");
+        return prop.getProperty("urlNasa");
     }
 
     public String getBrowser(){
@@ -56,4 +56,13 @@ public class PropertyAccesor {
     public String getPassword(){
         return prop.getProperty("password");
     }
+
+    public String getURLNasa() {
+        return prop.getProperty("urlNasa");
+    }
+
+    public String getURLToCompare() {
+        return prop.getProperty("urlToCompare");
+    }
+
 }
