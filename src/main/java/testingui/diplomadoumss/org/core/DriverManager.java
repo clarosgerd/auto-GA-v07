@@ -21,7 +21,7 @@ public class DriverManager {
         return ourInstance;
     }
 
-    private DriverManager() {
+    public DriverManager() {
         BroserType browserType = BroserType.valueOf(PropertyAccesor.getInstance().getBrowser());
         Browser browser = DriverFactory.getInstance().getBrowser(browserType);
         webDriver =  browser.getWebDriver();
@@ -42,8 +42,9 @@ public class DriverManager {
         webDriver.manage().timeouts().implicitlyWait(implicitTimeWait, TimeUnit.SECONDS);
     }
 
-    public void setExplicitTimeWait(int explicitTimeWait) {
+    public WebDriver setExplicitTimeWait(int explicitTimeWait) {
         webDriverWait = new WebDriverWait(webDriver, explicitTimeWait);
+        return null;
     }
 
     public WebDriverWait getWebDriverWait() {

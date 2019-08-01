@@ -1,8 +1,7 @@
 package testingui.diplomadoumss.org.manageloadpage;
 
 import org.openqa.selenium.WebDriver;
-import testingui.diplomadoumss.org.core.DriverManager;
-import testingui.diplomadoumss.org.managepage.login.Login;
+import org.openqa.selenium.support.PageFactory;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 /**
@@ -10,10 +9,18 @@ import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
  * @project testingui.diplomadoumss.org
  */
 public class LoadPage {
+    WebDriver driver;
 
-    public static Login loadPPHPTravels(){
-        WebDriver webDriver = DriverManager.getInstance().getWebDriver();
-        webDriver.get(PropertyAccesor.getInstance().getURL());
-        return new Login();
+    public LoadPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    public void loadPPHPTravels() {
+        driver.get(PropertyAccesor.getInstance().getURL());
+    }
+
+    public void setCredentials() {
+        driver.get(PropertyAccesor.getInstance().getURL() + "/admin");
     }
 }
