@@ -3,6 +3,7 @@ package testingui.diplomadoumss.org.core;
 import org.openqa.selenium.WebDriver;
 import testingui.diplomadoumss.org.managepage.cars.Cars;
 import testingui.diplomadoumss.org.managepage.login.Login;
+import testingui.diplomadoumss.org.managepage.logout.Logout;
 
 public class PageObjectManager {
 
@@ -11,6 +12,7 @@ public class PageObjectManager {
 
     Login login;
     Cars cars;
+    Logout logout;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -27,10 +29,10 @@ public class PageObjectManager {
     }
 
 
-   /* public ProductListingPage getProductListingPage() {
-        return (productListingPage == null) ? new ProductListingPage(driver) : productListingPage;
+    public Logout getLogout() {
+        return (logout == null) ? new Logout(driver) : logout;
     }
-
+/*
     public CartPage getCartPage() {
         return (cartPage == null) ? new CartPage(driver) : cartPage;
     }
